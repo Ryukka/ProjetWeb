@@ -11,6 +11,5 @@ function App() {
     );
 }
 
-testgitcaca
 
 export default App;
