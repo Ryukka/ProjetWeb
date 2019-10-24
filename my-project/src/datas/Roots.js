@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Link} from 'react-router-dom';
 import Signin from './Signins.js';
 import Connection from './Connections.js';
 import Payin from './Payins.js';
-import Card from './Cards.js';
+import CreditCard from './CreditCard.js';
 import Payout from './Payouts.js';
 import Home from './Homes.js';
 
@@ -19,7 +19,7 @@ class Root extends Component {
                     <Route path="/home" component={Home}/>
                     <Route path="/payin" component={Payin}/>
                     <Route path="/payout" component={Payout}/>
-                    <Route path="/mycard" component={Card}/>
+                    <Route path="/mycard" component={CreditCard}/>
                 </div>
             </BrowserRouter>            
         );
