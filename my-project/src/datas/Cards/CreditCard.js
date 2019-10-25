@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import '/home/marphi/PW/ProjetWeb/my-project/src/datas/Cards/credit-card.css';
+import './credit-card.css';
 
 
 class CreditCard extends Component {
