@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Link} from 'react-router-dom';
 import CreditCard from './CreditCard.js';
 import './credit-card.css';
 
+
 class CreditCardForm extends Component {
     constructor(props) {
         super(props);
@@ -50,82 +51,87 @@ class CreditCardForm extends Component {
         const { brand, name, rib, expiryDate, cvc} = this.state
 
         return (
-            
-            <div className='credit-card'>
-                <form onSubmit={this.handleSubmit}>
-                    <label className='credit-card_logo'>
-                        Brand:
-                        <select>
-                            <option value="VISA">VISA</option>
-                            <option value="MasterCard">MasterCard</option>
-                            <option value="Electron">Electron</option>
-                        </select>
-                    </label>
-                    
-                    <label className='credit-car_number'>
-                        RIB: 
-                        <input 
-                            type="number" 
-                            value={this.state.rib} 
-                            onChange={this.handleRib} 
-                            placeholder="xxxx xxxx xxxx xxxx" 
-                            required
-                            size="21">
-                        </input>
-                    </label>
+            <div>
+                <div className='credit-card'>
+                    <form onSubmit={this.handleSubmit}>
+                        <label className='credit-card_logo'>
+                            Brand:
+                            <select>
+                                <option value="VISA">VISA</option>
+                                <option value="MasterCard">MasterCard</option>
+                                <option value="Electron">Electron</option>
+                            </select>
+                        </label>
+                        
+                        <label className='credit-car_number'>
+                            RIB: 
+                            <input 
+                                type="number" 
+                                value={this.state.rib} 
+                                onChange={this.handleRib} 
+                                placeholder="xxxx xxxx xxxx xxxx" 
+                                required
+                                size="21">
+                            </input>
+                        </label>
 
-                    <div className='credit-card_info'>
-                        <div className='credit-card_info_name'>
-                            <label className='credit-card_info_label'>
-                                Name:
-                                <input
-                                    onChange={this.handleName}
-                                    type="text"
-                                    value={this.state.name}
-                                    placeholder="John Doe"
-                                    required
-                                    size="13"
-                                />
-                            </label>
-                        </div>
+                        <div className='credit-card_info'>
+                            <div className='credit-card_info_name'>
+                                <label className='credit-card_info_label'>
+                                    Name:
+                                    <input
+                                        onChange={this.handleName}
+                                        type="text"
+                                        value={this.state.name}
+                                        placeholder="John Doe"
+                                        required
+                                        size="13"
+                                    />
+                                </label>
+                            </div>
 
-                        <div className='credit-card_info_expiry'>
-                            <label className='credit-card_info_label'>
-                                Expiry Date
-                                <input 
-                                    type="text" 
-                                    value={this.state.expiryDate} 
-                                    onChange={this.handleExpiryDate} 
-                                    placeholder="mm/yyyy" 
-                                    required
-                                    size="7">
-                                </input>
-                            </label>
-                        </div>
+                            <div className='credit-card_info_expiry'>
+                                <label className='credit-card_info_label'>
+                                    Expiry Date
+                                    <input 
+                                        type="text" 
+                                        value={this.state.expiryDate} 
+                                        onChange={this.handleExpiryDate} 
+                                        placeholder="mm/yyyy" 
+                                        required
+                                        size="7">
+                                    </input>
+                                </label>
+                            </div>
 
-                        <div className='credit-card_info_cvc'>
-                            <label className='credit-card_info_label'>
-                                CVC
-                                <input 
-                                    type="text" 
-                                    value={this.state.cvc} 
-                                    onChange={this.handleCVC} 
-                                    placeholder="xxx" 
-                                    required
-                                    size="3">
-                                </input>
-                            </label>
+                            <div className='credit-card_info_cvc'>
+                                <label className='credit-card_info_label'>
+                                    CVC
+                                    <input 
+                                        type="text" 
+                                        value={this.state.cvc} 
+                                        onChange={this.handleCVC} 
+                                        placeholder="xxx" 
+                                        required
+                                        size="3">
+                                    </input>
+                                </label>
+                            </div>
                         </div>
-                    </div>
-                                        
-                    <label>
-                        <input 
-                            type="submit" 
-                            value="Envoyer"
-                            onChange={this.handleSubmit}/>
-                    </label>       
-                </form>
+                                            
+                        <label>
+                            <input 
+                                type="submit" 
+                                value="Add"
+                                onChange={this.handleSubmit}
+                            />
+                        </label>       
+                    </form>
+                </div>
+                <button><Link to="/cards">Back</Link></button>
             </div>
+
+
             
         )
     }

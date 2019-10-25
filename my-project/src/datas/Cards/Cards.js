@@ -13,6 +13,7 @@ class Cards extends Component {
             <div>
                 <button><Link to="/addcard">Add card</Link></button>
                 <button><Link to="/rmcard">Delete card</Link></button>
+                <button><Link to="/home">Back</Link></button>
             </div>
           )
       }
