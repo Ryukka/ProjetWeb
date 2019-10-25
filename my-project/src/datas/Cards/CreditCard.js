@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
-import '/home/marphi/PW/ProjetWeb/my-project/src/credit-card.css';
+import '/home/marphi/PW/ProjetWeb/my-project/src/datas/Cards/credit-card.css';
 
 
 class CreditCard extends Component {
     constructor(props) {
         super(props);
-        this.state = {
+        /*this.state = {
             
-        }
+        }*/
     }
       render(props) {
           return (

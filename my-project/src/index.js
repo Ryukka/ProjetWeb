@@ -5,22 +5,9 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { render } from 'react-dom';
-import CreditCard from '/home/marphi/PW/ProjetWeb/my-project/src/datas/CreditCard.js';
+import CreditCard from '/home/marphi/PW/ProjetWeb/my-project/src/datas/Cards/CreditCard.js';
 
 const mountNode = document.getElementById("app");
-
-/*render(
-    <div className='demo-container'>
-        <CreditCard
-            name="NEIL GAIMAN"
-            number="5241 1734 7629 0435"
-            expiry="04/2028"
-        />
-    </div>,
-    mountNode
-);*/
-
-
 
 
 ReactDOM.render(

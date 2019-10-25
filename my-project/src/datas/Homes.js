@@ -7,7 +7,7 @@ class Home extends Component{
             <div>
                 <button><Link to="/payout">Pay</Link></button>
                 <button><Link to="/payin">Ask</Link></button>
-                <button><Link to="/mycard">Cards</Link></button>
+                <button><Link to="/cards">Cards</Link></button>
             </div>
         );
     }

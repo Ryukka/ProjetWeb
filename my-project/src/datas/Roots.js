@@ -3,9 +3,11 @@ import { BrowserRouter, Route, Link} from 'react-router-dom';
 import Signin from './Signins.js';
 import Connection from './Connections.js';
 import Payin from './Payins.js';
-import CreditCard from './CreditCard.js';
+import CreditCard from './Cards/CreditCard.js';
 import Payout from './Payouts.js';
 import Home from './Homes.js';
+import Cards from './Cards/Cards.js';
+import CreditCardForm from './Cards/CreditCardForm.js';
 
 
 
@@ -19,7 +21,9 @@ class Root extends Component {
                     <Route path="/home" component={Home}/>
                     <Route path="/payin" component={Payin}/>
                     <Route path="/payout" component={Payout}/>
-                    <Route path="/mycard" component={CreditCard}/>
+                    <Route path="/cards" component={Cards}/>
+                    <Route path="/addcard" component={CreditCardForm}/>
+                    <Route path="/rmcard" component={Cards}/>
                 </div>
             </BrowserRouter>            
         );
