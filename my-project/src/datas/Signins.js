@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Link} from 'react-router-dom';
 import './Databases.js';
-import User from './Users.js';
-import ContactList from './Databases2.js';
 
-const UserList = [];
+export const UserList = [];
 
 class Signin extends Component{
 
@@ -30,12 +28,12 @@ class Signin extends Component{
         User.password=inputpassword;
         console.log({User})
 
-        UserList.push(User) // ad on the UserList
+        UserList.push(User) // add the User on the UserList
         console.log(UserList)
+        localStorage.setItem('MyUserList',JSON.stringify(UserList));
 
-        document.forms[0].reset(); // reset the form for next entries
-
-        localStorage.setItem("MyUserList",JSON.stringify(UserList));
+        document.forms[0].reset(); // reset the form for next entries  
+             
     }
 
 
@@ -54,9 +52,7 @@ class Signin extends Component{
 
             <label><b>Password</b></label>
             <input id="password" type="password" placeholder="enter password" required></input>
-
-            <label><b>Confirm Password</b></label>
-            <input type="password" placeholder="Confirm password" required></input>
+            
             <button onClick={this.AffectUser}>oui</button>
             </form>
             <button><Link to="/">Return</Link></button>

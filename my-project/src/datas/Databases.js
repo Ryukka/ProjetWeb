@@ -1,14 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Link} from 'react-router-dom';
 
-export const User = [{
-    id: 'mysql autocrement bigint',
-    first_name: 'string',
-    last_name: 'string',
-    email: 'email, string unique',
-    password: 'string',
-    is_admin: 'boolean'
-}]
 
 export const wallet = {
     id: 'mysql autocrement bigint',
@@ -38,15 +30,3 @@ export const transfer = {
 };
             
 
-
-class Contact extends Component{
-    render(){
-        return(
-            <li>
-                {this.props.User.first_name}
-            </li>
-        )
-    }
-}
-
-export default Contact;

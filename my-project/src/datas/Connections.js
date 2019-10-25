@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Link} from 'react-router-dom';
-
+import {UserList} from './Databases.js'
 
 class Connection extends Component{   
+
+    CheckRegistered = () => {
+        if()
+    }
     
     render () {
         return(
@@ -14,7 +18,7 @@ class Connection extends Component{
             <label><b>Password</b></label>
             <input type="password" placeholder="enter password" required></input>
         </form>
-        <button ><Link to="/signin">Sign in</Link></button>
+        <button onClick><Link to="/signin">Sign in</Link></button>
         <button><Link to="/home">Log in</Link></button>
         </div>
         );
