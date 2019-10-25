@@ -6,6 +6,8 @@ class Card extends Component {
         return(
             <div>
                 <bouton>add</bouton>
+                <bouton>edit</bouton>
+                <bouton>delete</bouton>
             </div>
         );
     }

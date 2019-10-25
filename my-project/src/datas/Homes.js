@@ -8,6 +8,7 @@ class Home extends Component{
                 <button><Link to="/payout">Pay</Link></button>
                 <button><Link to="/payin">Ask</Link></button>
                 <button><Link to="/mycard">My card</Link></button>
+                <button><Link to="/myaccount">My Account</Link></button>
             </div>
         );
     }

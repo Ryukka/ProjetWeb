@@ -6,6 +6,7 @@ import Payin from './Payins.js';
 import Card from './Cards.js';
 import Payout from './Payouts.js';
 import Home from './Homes.js';
+import User from './Users.js';
 
 
 
@@ -20,6 +21,7 @@ class Root extends Component {
                     <Route path="/payin" component={Payin}/>
                     <Route path="/payout" component={Payout}/>
                     <Route path="/mycard" component={Card}/>
+                    <Route path="/myaccount" component={User}/>
                 </div>
             </BrowserRouter>            
         );

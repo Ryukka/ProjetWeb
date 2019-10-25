@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Link} from 'react-router-dom';
 class Wallet extends Component{
     render(){
         return(
-            <button>add</button>
+            <button>Add</button>
         );
     }
 }
