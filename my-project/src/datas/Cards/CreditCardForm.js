@@ -6,26 +6,48 @@ class CreditCardForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            value: '',
-            value2:''
+            brand: '',
+            name:'',
+            rib: '',
+            expiryDate: '',
+            cvc: ''
         };
-
-        this.handleChange = this.handleChange.bind(this);
+        
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleBrand = this.handleBrand.bind(this);
+        this.handleName = this.handleName.bind(this);
+        this.handleRib = this.handleRib.bind(this);
+        this.handleExpiryDate = this.handleExpiryDate.bind(this);
+        this.handleCVC = this.handleCVC.bind(this);
     }
 
-
-
-    handleChange(event) {
-        this.setState({value: event.target.value});
+    handleBrand = event => {
+        this.setState({brand: event.target.value});
+    }
+    handleName = event => {
+        this.setState({name: event.target.value });
     }
 
-    handleSubmit(event) {
-        alert('Your card has been succesfully added: ' + this.state.value);                       
+    handleRib = event => {        
+        this.setState({rib: event.target.value});
+    }
+
+    handleExpiryDate = event => {
+        this.setState({expiryDate: event.target.value});
+    }
+
+    handleCVC = event => {
+        this.setState({cvc: event.target.value});
+    }
+
+    handleSubmit = event => {
+        alert('Your card has been succesfully added! \nBrand: ' + this.state.brand+'\nName: ' + this.state.name + '\nRIB: ' + this.state.rib + '\nExpiryDate: ' + this.state.expiryDate + '\nCVC: ' + this.state.cvc);
         event.preventDefault();
     }
 
     render(props) {
+        const { brand, name, rib, expiryDate, cvc} = this.state
+
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
@@ -39,11 +61,56 @@ class CreditCardForm extends Component {
                     </label>
                     
                     <label>
-                        RIB
+                        Name:
+                        <input
+                            onChange={this.handleName}
+                            type="text"
+                            value={this.state.name}
+                            placeholder="John Doe"
+                            required
+                        />
                     </label>
-                    <input type="text" value={this.state.value} onChange={this.handleChange} placeholder="RIB" required></input>
+
+                    <label>
+                        RIB
+                        <input 
+                            type="number" 
+                            value={this.state.rib} 
+                            onChange={this.handleRib} 
+                            placeholder="xxxx xxxx xxxx xxxx" 
+                            required>
+                        </input>
+                    </label>
+
+                    <label>
+                        Expiry Date
+                        <input 
+                            type="text" 
+                            value={this.state.expiryDate} 
+                            onChange={this.handleExpiryDate} 
+                            placeholder="mm/yyyy" 
+                            required>
+                        </input>
+                    </label>
+
+                    <label>
+                        CVC
+                        <input 
+                            type="number" 
+                            value={this.state.cvc} 
+                            onChange={this.handleCVC} 
+                            placeholder="xxx" 
+                            required>
+                        </input>
+                    </label>
                     
-                    <input type="submit" value="Envoyer"/>
+                    <label>
+                        <input 
+                            type="submit" 
+                            value="Envoyer"
+                            onChange={this.handleSubmit}/>
+                    </label>
+                    
                 </form>
 
 

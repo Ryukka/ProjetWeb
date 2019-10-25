@@ -27,6 +27,11 @@ class CreditCard extends Component {
                             <div className='credit-card_info_label'>VALID UP TO</div>
                             <div>{this.props.expiry}</div>
                         </div>
+
+                        <div className='credit-card_info_cvc'>
+                            <div className='credit-card_info_label'>CVC</div>
+                            <div>{this.props.cvc}</div>
+                        </div>
                     </div>
                 </div>
             
