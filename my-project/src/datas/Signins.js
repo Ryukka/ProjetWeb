@@ -1,22 +1,28 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Link} from 'react-router-dom';
 import './Databases.js';
+import User from './Users.js';
 
-export const UserList = [];
+export let UserList = [];
+export let WalletList =[];
 
 class Signin extends Component{
 
     AffectUser = (Event) =>{
         Event.preventDefault();
-        const User = [{
+        let User = {
             id: 'mysql autocrement bigint',
             first_name: 'string',
             last_name: 'string',
             email: 'email, string unique',
             password: 'string',
             is_admin: 'boolean'
-        }]
-        
+        }
+        let wallet = {
+            id: 'mysql autocrement bigint',
+            balance: '0000',
+            }; 
+            
         var inputemail=document.getElementById("email").value;
         var inputfirstname =document.getElementById("firstname").value;
         var inputlastname=document.getElementById("lastname").value;
@@ -29,6 +35,16 @@ class Signin extends Component{
         console.log({User})
 
         UserList.push(User) // add the User on the UserList
+        
+        WalletList.push(wallet)
+
+        for (var i=1; i<UserList.length;i++){
+            UserList[i].id=i;
+            UserList[i].is_admin=false;
+            WalletList[i].id=i;
+        }
+        
+
         console.log(UserList)
         localStorage.setItem('MyUserList',JSON.stringify(UserList));
 

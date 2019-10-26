@@ -5,9 +5,9 @@ class Card extends Component {
     render(){
         return(
             <div>
-                <bouton>add</bouton>
-                <bouton>edit</bouton>
-                <bouton>delete</bouton>
+                <bouton><Link to="/addCard">Add a new credit card</Link></bouton>
+                <bouton><Link to="/cards">Modify a credit card</Link></bouton>
+                <bouton><Link to="/cards">Delete a credit card</Link></bouton>
             </div>
         );
     }
