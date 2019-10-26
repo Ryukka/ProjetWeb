@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { BrowserRouter, Route, Link} from 'react-router-dom';
 import CreditCard from './CreditCard.js';
 import './credit-card.css';
+import ListOfCards from './ListOfCards.js';
 
 
 class CreditCardForm extends Component {
@@ -44,7 +45,12 @@ class CreditCardForm extends Component {
     }
 
     handleSubmit = event => {
-        alert('Your card has been succesfully added! \nBrand: ' + this.state.brand+'\nName: ' + this.state.name + '\nRIB: ' + this.state.rib + '\nExpiryDate: ' + this.state.expiryDate + '\nCVC: ' + this.state.cvc);
+        alert('Your card has been succesfully added! \nBrand: ' + 
+        this.state.brand+'\nName: ' 
+        + this.state.name + '\nRIB: ' 
+        + this.state.rib + '\nExpiryDate: ' 
+        + this.state.expiryDate + '\nCVC: ' 
+        + this.state.cvc);
         event.preventDefault();
     }
 
@@ -126,13 +132,7 @@ class CreditCardForm extends Component {
                                 value="Add"
                                 onChange={this.handleSubmit}
                                 onClick={ 
-                                    <CreditCard 
-                                        logo={this.state.brand}
-                                        name={this.state.name}
-                                        rib={this.state.rib}
-                                        expiryDate={this.state.expiryDate}
-                                        cvc={this.state.cvc}>
-                                    </CreditCard>
+                                    <ListOfCards/>
 
                             }
                             />

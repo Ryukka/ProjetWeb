@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './credit-card.css';
-
+import User from '../users';
+import ListOfCards from './ListOfCards.js'
 
 class CreditCard extends Component {
     constructor(props) {
@@ -9,9 +10,10 @@ class CreditCard extends Component {
             
         }*/
     }
+    
       render(props) {
           return (
-              <div>{this.props.userId}
+              <div>{User.idUser}
                 <div className='credit-card'>
 
                     <div className='credit-card_logo'>{this.props.logo}</div>
@@ -38,6 +40,6 @@ class CreditCard extends Component {
             </div>
           )
       }
-}
+    }
 
 export default CreditCard;
