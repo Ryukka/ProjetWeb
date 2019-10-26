@@ -126,6 +126,14 @@ class CreditCardForm extends Component {
                                 value="Add"
                                 onChange={this.handleSubmit}
                                 onClick={ 
+                                    <CreditCard 
+                                        logo={this.state.brand}
+                                        name={this.state.name}
+                                        rib={this.state.rib}
+                                        expiryDate={this.state.expiryDate}
+                                        cvc={this.state.cvc}>
+                                    </CreditCard>
+
                             }
                             />
                         </label>       
