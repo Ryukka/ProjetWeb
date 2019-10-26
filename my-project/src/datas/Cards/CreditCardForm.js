@@ -8,6 +8,7 @@ class CreditCardForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            userId:'',
             brand: '',
             name:'',
             rib: '',
@@ -48,7 +49,7 @@ class CreditCardForm extends Component {
     }
 
     render(props) {
-        const { brand, name, rib, expiryDate, cvc} = this.state
+        const { userId, brand, name, rib, expiryDate, cvc} = this.state
 
         return (
             <div>
@@ -66,9 +67,9 @@ class CreditCardForm extends Component {
                         <label className='credit-car_number'>
                             RIB: 
                             <input 
+                                onChange={this.handleRib} 
                                 type="number" 
                                 value={this.state.rib} 
-                                onChange={this.handleRib} 
                                 placeholder="xxxx xxxx xxxx xxxx" 
                                 required
                                 size="21">
@@ -94,9 +95,9 @@ class CreditCardForm extends Component {
                                 <label className='credit-card_info_label'>
                                     Expiry Date
                                     <input 
+                                        onChange={this.handleExpiryDate} 
                                         type="text" 
                                         value={this.state.expiryDate} 
-                                        onChange={this.handleExpiryDate} 
                                         placeholder="mm/yyyy" 
                                         required
                                         size="7">
@@ -124,11 +125,16 @@ class CreditCardForm extends Component {
                                 type="submit" 
                                 value="Add"
                                 onChange={this.handleSubmit}
+                                onClick={ 
+                            }
                             />
                         </label>       
                     </form>
                 </div>
-                <button><Link to="/cards">Back</Link></button>
+                <button>
+                    <Link to="/cards">Back</Link>
+                    
+                </button>
             </div>
 
 

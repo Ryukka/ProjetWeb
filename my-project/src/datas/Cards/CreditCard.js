@@ -11,6 +11,7 @@ class CreditCard extends Component {
     }
       render(props) {
           return (
+              <div>{this.props.userId}
                 <div className='credit-card'>
 
                     <div className='credit-card_logo'>{this.props.logo}</div>
@@ -34,7 +35,7 @@ class CreditCard extends Component {
                         </div>
                     </div>
                 </div>
-            
+            </div>
           )
       }
 }
