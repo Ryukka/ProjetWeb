@@ -1,21 +1,25 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Link} from 'react-router-dom';
-import {WalletList} from './Signins.js'
 import {idUser} from './Connections.js'
 
 class Payout extends Component{
-    askMoney(){
+    withdrawMoney=(Event)=>{
+        Event.preventDefault();
         let payout = {
             id: 'mysql autocrement bigint',
             wallet_id: 'secondary key bigint mysql',
-            amount: 'integer !! 15e: amount = 1500',
-        };
+            amount: 'integer !! 15€: amount = 1500',
+        }    
         
-        var addamount = document.getElementById("withdraw").value;
-        payout.amount = addamount;
-        payout.wallet_id=idUser;
+        var retrieveamount = document.getElementById("retrieve").value;
+        payout.amount = retrieveamount;
+        payout.wallet_id=idUser[0];
 
-        WalletList[idUser].amount-=addamount;
+        var mywallet = JSON.parse(localStorage.getItem("MyWalletList"))
+        mywallet[idUser[0]].balance -= retrieveamount;
+        localStorage.setItem('MyWalletList', JSON.stringify(mywallet))
+        alert("Money retrieved ^^")
+        document.forms[0].reset();
     }
 
     render(){
@@ -23,11 +27,11 @@ class Payout extends Component{
             <div>
                 
                 <form>
-                <label><b>Withdraw money on your wallet</b></label>
-                <input id="withdraw" type="integer" placeholder="enter amount" required></input>
-                <button onClick={this.addmoney}>Add Money</button>
-
+                <label><b>Add money on your wallet</b></label>
+                <input id="retrieve" type="number" placeholder="enter amount" required></input>
+                <button onClick={this.withdrawMoney}>Add Money</button>
                 </form>
+                <button><Link to="/home">return</Link></button>
             </div>
         );
     }

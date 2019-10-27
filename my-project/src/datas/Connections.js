@@ -1,15 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Link} from 'react-router-dom';
 
-export var idUser =0;
+export let idUser=[1];
 
 class Connection extends Component{   
-    constructor(props){
-        super(props);
-        this.state = {allow: false}
-        this.CheckRegistered = this.CheckRegistered.bind(this);
-
-    }
 
     CheckRegistered = (Event) => {
         Event.preventDefault();
@@ -17,18 +11,15 @@ class Connection extends Component{
         let inputemail=document.getElementById("email").value;
         let inputpassword=document.getElementById("password").value
         let MyUserList = JSON.parse(localStorage.getItem("MyUserList")) 
-
-        for (var i=0; MyUserList.length ;i++){
-            
-            console.log(MyUserList[i])
-            console.log(MyUserList.email)
+       for (var i=0; i<MyUserList.length ;i++){
             if (!(inputemail < MyUserList[i].email) && !(inputpassword > MyUserList[i].password)){
-                this.setState({allow: true});
-                idUser=MyUserList[i].id;
-                console.log(idUser)
+                idUser[0]=MyUserList[i].id;
+                console.log(idUser[0])
+                this.props.history.push("/home")
+                return;
             }
         }
-        console.log(this.state)
+        alert("wrong password or email adress")
     }
 
     

@@ -14,34 +14,46 @@ export const transfer = {
 
 
 class Transfer extends Component{
-maketransfer=()=>{
-    transfer.debited_wallet_id=idUser;
-    transfer.amount = document.getElementById("howmuch").value;
-    let forwho =document.getElementById("forwho").value
-    var idforwho=-1;
-    while  (idforwho==-1){
-        for (var i=1; i<UserList.length;i++){
-            if (forwho== UserList[i].email){
-                idforwho=UserList[i].id;
-            }
-        }
-        break;
-    }
-    transfer.credited_wallet_id=idforwho;
+maketransfer=(Event)=>{
 
-    //looking for the debited wallet
-    WalletList[idUser].balance-=transfer.amount
-    WalletList[idforwho].balance+=transfer.amount
+    Event.preventDefault();
+
+    transfer.debited_wallet_id=idUser[0];
+    transfer.amount = document.getElementById("howmuch").value;
+
+    let forwho =document.getElementById("forwho").value
+    var mywallet = JSON.parse(localStorage.getItem("MyWalletList")) 
+    var idforwho;
+
+    for (var i=0; i<mywallet.length;i++){
+        if (!(forwho < mywallet[i].email) && !(forwho > mywallet[i].email)){
+            idforwho=mywallet[i].id;
+            console.log(idforwho)
+            transfer.credited_wallet_id=idforwho;
+            mywallet[idUser[0]].balance-=transfer.amount
+            mywallet[idforwho].balance+=transfer.amount
+            localStorage.setItem("MyWalletList", JSON.stringify(mywallet))
+            alert("Money transfered")
+            document.forms[0].reset();
+            return
+        }
+    }
+    alert("User not found")
+    
 }
 
     render(){
         return(
+            <div>
             <form>
                 <label><b>for who?</b></label>
-                <input id="forwho" type="text" placeholder="enter recipient mail" required></input>
-                <input id="howmuch" type="integer" placeholder="How much?" required></input>
+                <input id="forwho" type="email" placeholder="enter recipient mail" required></input>
+                <label><b>how much?</b></label>
+                <input id="howmuch" type="number" placeholder="How much?" required></input>
                 <button onClick={this.maketransfer}>Transfer the moneyyyyyy</button>
             </form>
+            <button><Link to="/home">Return</Link></button>
+            </div>
         )
     }
 }

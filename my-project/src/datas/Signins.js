@@ -20,8 +20,8 @@ class Signin extends Component{
         }
         let wallet = {
             id: 'mysql autocrement bigint',
-            balance: '0000',
-            }; 
+            balance: 'integer',
+        } 
             
         var inputemail=document.getElementById("email").value;
         var inputfirstname =document.getElementById("firstname").value;
@@ -32,13 +32,14 @@ class Signin extends Component{
         User.first_name=inputfirstname;
         User.last_name=inputlastname;
         User.password=inputpassword;
-        console.log({User})
+
+        wallet.balance= 0;
 
         UserList.push(User) // add the User on the UserList
         
         WalletList.push(wallet)
 
-        for (var i=1; i<UserList.length;i++){
+        for (var i=0; i<UserList.length;i++){
             UserList[i].id=i;
             UserList[i].is_admin=false;
             WalletList[i].id=i;
@@ -47,6 +48,7 @@ class Signin extends Component{
 
         console.log(UserList)
         localStorage.setItem('MyUserList',JSON.stringify(UserList));
+        localStorage.setItem('MyWalletList', JSON.stringify(WalletList));
 
         document.forms[0].reset(); // reset the form for next entries  
              
