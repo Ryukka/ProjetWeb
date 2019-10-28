@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Link} from 'react-router-dom';
 import {idUser} from './Connections.js'
-
+import './mywallet.css'
 class Home extends Component {
     constructor(props){
         super(props);
@@ -20,11 +20,12 @@ class Home extends Component {
                     <button className="button"><Link to="/myAccount" className="link">My Account</Link></button>
                     <button className="button"><Link to="/myCards" className="link">My Cards</Link></button>
                     <button className="button"><Link to="/myWallet" className="link">My Wallet</Link></button>
-                    <div>
-                    <b>my wallet:</b>
+
+                    <div className="order">
+                <b>My wallet:</b>
                     <b>{this.state.walletamount}</b>
-                    </div>
-                    <button className="button2"><Link to="/" className="link">Disconnect</Link></button>
+                </div>
+                <button className="button2"><Link to="/" className="link">Disconnect</Link></button>
             </div>
         );
     }

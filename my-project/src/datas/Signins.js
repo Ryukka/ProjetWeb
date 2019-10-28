@@ -88,7 +88,7 @@ class Signin extends Component{
                     </form>
                 </div>
 
-                <button><Link to="/">Return</Link></button>
+                <button className="button2"><Link to="/">Return</Link></button>
             </div>
         );
     }

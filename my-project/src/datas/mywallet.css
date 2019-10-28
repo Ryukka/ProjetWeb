@@ -1,0 +1,11 @@
+.add {
+    display:block;
+    size: 10px;
+}
+
+.order {
+    display: block;
+    margin: auto;
+    text-align: center;
+    color: white;
+}

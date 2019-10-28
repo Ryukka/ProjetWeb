@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import './design_global.css'
+import './mywallet.css'
 class Wallet extends Component {
     render() {
         return (
@@ -12,10 +13,8 @@ class Wallet extends Component {
                 <button className="button" ><Link to="/payin" className="link">Make a deposit</Link></button>
                 <button className="button"><Link to="/payout" className="link">Withdraw money</Link></button>
                 <button className="button"><Link to="/transfer" className="link">Transfer money</Link></button>
-                <label>
-                    <b>My Wallet:</b>
-                    <button onClick={this.mywallet}></button>
-                </label>
+
+               
                 <button className="button2"><Link to="/home" className="link">Back</Link></button>
             </div>
 

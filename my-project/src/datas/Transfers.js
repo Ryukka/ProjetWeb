@@ -40,22 +40,26 @@ maketransfer=(Event)=>{
             return
         }
     }
-    alert("User not found")
-    
+    alert("User not found")  
 }
 
     render(){
         return(
-            <div>
-            <form>
-                <label><b>for who?</b></label>
+            
+            <div className="app">
+                <div className="header">
+                    <h1>Watermelon</h1>
+                </div>
+            <form className="form">
+                <label className="form_item" ><b>for who?</b></label>
                 <input id="forwho" type="email" placeholder="enter recipient mail" required></input>
                 <label><b>how much?</b></label>
-                <input id="howmuch" type="number" placeholder="How much?" required></input>
+                <input  id="howmuch" type="number" placeholder="How much?" required></input>
                 <button onClick={this.maketransfer}>Transfer the moneyyyyyy</button>
             </form>
             <button><Link to="/home">Return</Link></button>
             </div>
+        
         )
     }
 }

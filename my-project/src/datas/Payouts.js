@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Link} from 'react-router-dom';
 import {idUser} from './Connections.js'
+import './mywallet.css'
 
 class Payout extends Component{
     withdrawMoney=(Event)=>{
@@ -22,16 +23,27 @@ class Payout extends Component{
         document.forms[0].reset();
     }
 
-    render(){
-        return(
-            <div>
-                
+    render() {
+        return (
+            <div className="app">
+                <div className="header">
+                    <h1>Watermelon</h1>
+                </div>
+
                 <form>
-                <label><b>Add money on your wallet</b></label>
-                <input id="retrieve" type="number" placeholder="enter amount" required></input>
-                <button onClick={this.withdrawMoney}>Add Money</button>
+                    <p className="title">Withdraw money</p>
+
+                    <div className="order">
+                    <label><b>Add money on your wallet</b></label>
+                    <input id="retrieve" type="number" placeholder="enter amount" required></input>
+                    </div>
+                    
+                    <button className="button" onClick={this.withdrawMoney}>Add Money</button>
                 </form>
-                <button><Link to="/home">return</Link></button>
+                <div>
+                <button className="button2"><Link to="/home">return</Link></button>
+                </div>
+                
             </div>
         );
     }

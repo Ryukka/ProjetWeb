@@ -40,17 +40,17 @@ class Connection extends Component {
                 <div className="form">
                     <form>
                         <p className="title">Log In</p>
-                        <div className="mail">
+                        <div className="item">
                             <label ><b></b></label>
-                            <input id="email" type="email" placeholder="enter email" required></input>
+                            <input  type="email" placeholder="enter email" required></input>
                         </div>
 
-                        <div className="pwd">
+                        <div className="item">
                             <label ><b></b></label>
-                            <input id="password" type="password" placeholder="enter password" required></input>
+                            <input type="password" placeholder="enter password" required></input>
                         </div>
 
-                        <div className="log_in" >
+                        <div className="item" >
                             <button className="button" onClick={this.CheckRegistered}>log in</button>
                         </div>
                     </form>

@@ -2,7 +2,8 @@
 
 
 .form {
-    display:table-cell;
+    display:flex;
+    flex: 2;
     justify-content: space-around;
     color: white;
     font-family: sans-serif;
@@ -17,15 +18,7 @@
 
 
 
-.mail {
-    padding:5px;
-}
-
-.pwd {
-    padding:5px;
-}
-
-.log_in {
+.item {
     padding:5px;
 }
 

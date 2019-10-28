@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import { UserList } from './Signins.js'
 import { idUser } from './Connections.js'
+import './Connection.css'
 
 
 class User extends Component {
@@ -31,12 +32,13 @@ class User extends Component {
                 <div className="form">
                     <form>
                         <p className="title">My Account</p>
-                        <label><b>New password</b></label>
-                        <input id="password" type="password" placeholder="enter your new password" required></input>
-                        <button onClick={this.ChangePassword}>Change password</button>
-                        <label><b>Your current password</b>
-                            <b>{this.state.userpass}</b></label>
-
+                        <div>
+                            <label><b>New password</b></label>
+                            <input className="form_item" id="password" type="password" placeholder="enter your new password" required></input>
+                            <button className="button" onClick={this.ChangePassword}>Change password</button>
+                            <label ><b>Your current password </b><br/>
+                                <b>{this.state.userpass}</b></label>
+                        </div>
                     </form>
                 </div>
 
