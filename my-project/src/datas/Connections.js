@@ -45,13 +45,13 @@ class Connection extends Component {
                         </div>
 
                         <div className="log_in" >
-                            <button onClick={this.CheckRegistered}>log in</button>
+                            <button className="button" onClick={this.CheckRegistered}>log in</button>
                         </div>
                     </form>
                 </div>
 
                 <div className="sign_in">
-                    <button ><Link to="/signin">Sign in</Link></button>
+                    <button className="button2" ><Link to="/signin">Sign in</Link></button>
                 </div>
             </div>
 
