@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Link} from 'react-router-dom';
 import './Databases.js';
-import User from './users.js';
+import User from './Users.js';
 
 export let UserList = [];
 export let WalletList =[];
@@ -33,7 +33,7 @@ class Signin extends Component{
         User.last_name=inputlastname;
         User.password=inputpassword;
 
-        wallet.balance= 0;
+        wallet.balance=Number('0');
 
         UserList.push(User) // add the User on the UserList
         
@@ -44,9 +44,7 @@ class Signin extends Component{
             UserList[i].is_admin=false;
             WalletList[i].id=i;
         }
-        
-
-        console.log(UserList)
+        alert("Account created")
         localStorage.setItem('MyUserList',JSON.stringify(UserList));
         localStorage.setItem('MyWalletList', JSON.stringify(WalletList));
 

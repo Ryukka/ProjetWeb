@@ -16,7 +16,7 @@ class Payout extends Component{
         payout.wallet_id=idUser[0];
 
         var mywallet = JSON.parse(localStorage.getItem("MyWalletList"))
-        mywallet[idUser[0]].balance -= retrieveamount;
+        mywallet[idUser[0]].balance -= Number(retrieveamount);
         localStorage.setItem('MyWalletList', JSON.stringify(mywallet))
         alert("Money retrieved ^^")
         document.forms[0].reset();
