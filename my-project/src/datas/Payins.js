@@ -16,9 +16,7 @@ class Payin extends Component{
         payin.wallet_id=idUser[0];
 
         var mywallet = JSON.parse(localStorage.getItem("MyWalletList"))
-        console.log(idUser[0])
-        console.log(mywallet[idUser[0]]);
-        mywallet[idUser[0]].balance += addamount;
+        mywallet[idUser[0]].balance += Number(addamount);
         localStorage.setItem('MyWalletList', JSON.stringify(mywallet))
         alert("Money added ^^")
         document.forms[0].reset();

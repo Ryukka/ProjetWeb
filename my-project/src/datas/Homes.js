@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Link} from 'react-router-dom';
 import {idUser} from './Connections.js'
-import {WalletList} from './Signins.js'
 
 class Home extends Component{
-    mywallet=()=>{
-        let MyWalletList = JSON.parse(localStorage.getItem("MyWalletList"))
-        console.log(MyWalletList[idUser].balance)
+    constructor(props){
+        super(props);
+        var myWalletList= JSON.parse(localStorage.getItem("MyWalletList"));
+        var walletbalance = myWalletList[idUser[0]].balance;
+        this.state = {walletamount: walletbalance}
     }
+
     render(){
         return(
             <div>
@@ -21,7 +23,7 @@ class Home extends Component{
                 <button><Link to="/">Disconnect</Link></button>
                 <div>
                     <b>my wallet:</b>
-                    <button onClick={this. mywallet}></button>
+                    <b>{this.state.walletamount}</b>
                 </div>
             </div>
         );

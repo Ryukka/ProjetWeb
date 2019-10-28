@@ -21,17 +21,19 @@ maketransfer=(Event)=>{
     transfer.debited_wallet_id=idUser[0];
     transfer.amount = document.getElementById("howmuch").value;
 
-    let forwho =document.getElementById("forwho").value
+    let forwho =document.getElementById("forwho").value;
     var mywallet = JSON.parse(localStorage.getItem("MyWalletList")) 
-    var idforwho;
+    let myUserList = JSON.parse(localStorage.getItem("MyUserList"))
 
     for (var i=0; i<mywallet.length;i++){
-        if (!(forwho < mywallet[i].email) && !(forwho > mywallet[i].email)){
-            idforwho=mywallet[i].id;
-            console.log(idforwho)
-            transfer.credited_wallet_id=idforwho;
-            mywallet[idUser[0]].balance-=transfer.amount
-            mywallet[idforwho].balance+=transfer.amount
+        if (!(forwho < myUserList[i].email) && !(forwho > myUserList[i].email)){
+            if(mywallet[idUser[0]].balance < Number(transfer.amount)){
+                alert("Not enough fund for transfer")
+                return;
+            }
+            transfer.credited_wallet_id=i;
+            mywallet[idUser[0]].balance -= Number(transfer.amount)
+            mywallet[i].balance += Number(transfer.amount)
             localStorage.setItem("MyWalletList", JSON.stringify(mywallet))
             alert("Money transfered")
             document.forms[0].reset();
