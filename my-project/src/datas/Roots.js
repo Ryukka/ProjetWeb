@@ -6,7 +6,7 @@ import Payin from './Payins.js';
 import CreditCard from './Cards/CreditCard.js';
 import Payout from './Payouts.js';
 import Home from './Homes.js';
-import User from './users.js';
+import User from './Users.js';
 import Cards from './Cards/Cards.js';
 import CreditCardForm from './Cards/CreditCardForm.js';
 import Transfer from './Transfers.js'
