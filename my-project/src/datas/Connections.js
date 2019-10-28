@@ -13,7 +13,12 @@ class Connection extends Component {
         let inputemail=document.getElementById("email").value;
         let inputpassword=document.getElementById("password").value
         let MyUserList = JSON.parse(localStorage.getItem("MyUserList")) 
-       for (var i=0; i<MyUserList.length ;i++){
+        if (MyUserList == null){
+            alert("No inscriptions yet. Create an account to log in")
+            return;
+        }
+      
+        for (var i=0; i<MyUserList.length ;i++){
             if (!(inputemail < MyUserList[i].email) && !(inputpassword > MyUserList[i].password)){
                 idUser[0]=MyUserList[i].id;
                 console.log(idUser[0])
