@@ -10,6 +10,7 @@ import User from './users.js';
 import Cards from './Cards/Cards.js';
 import CreditCardForm from './Cards/CreditCardForm.js';
 import Transfer from './Transfers.js'
+import Wallet from './wallets.js'
 
 
 
@@ -23,10 +24,12 @@ class Root extends Component {
                     <Route path="/home" component={Home}/>
                     <Route path="/payin" component={Payin}/>
                     <Route path="/payout" component={Payout}/>
-                    <Route path="/mycard" component={Cards}/>
-                    <Route path="   /myaccount" component={User}/>
+                    <Route path="/myCards" component={Cards}/>
+                    <Route path="/myAccount" component={User}/>
+                    <Route path="/myWallet" component={Wallet}/>
                     <Route path="/addcard" component={CreditCardForm}/>
                     <Route path="/transfer" component={Transfer}/>
+                    
                 </div>
             </BrowserRouter>            
         );
