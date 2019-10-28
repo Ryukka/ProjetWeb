@@ -1,0 +1,47 @@
+
+.app {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+    width: 360px;
+    height: 720px;
+    padding: 25px;
+    border-radius: 15px;
+    background-color:#3D3A3A;
+    color:#3D3A3A;
+    font-family: sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+  
+  }
+  
+  
+.header {
+    display:flex;
+    flex:0;
+    color: white;
+    text-align: center;
+    font-family: sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.title {
+
+    font-size: 30px;
+    font-style: italic;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form_item {
+    display: block;
+    padding:5px;
+    margin-left: auto;
+    margin-right: auto;
+    color:white;
+}

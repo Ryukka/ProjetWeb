@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Link} from 'react-router-dom';
 import './Databases.js';
-import User from './Users.js';
+import User from './users.js';
 
 export let UserList = [];
 export let WalletList =[];
@@ -20,8 +20,8 @@ class Signin extends Component{
         }
         let wallet = {
             id: 'mysql autocrement bigint',
-            balance: '0000',
-            }; 
+            balance: 'integer',
+        } 
             
         var inputemail=document.getElementById("email").value;
         var inputfirstname =document.getElementById("firstname").value;
@@ -32,13 +32,14 @@ class Signin extends Component{
         User.first_name=inputfirstname;
         User.last_name=inputlastname;
         User.password=inputpassword;
-        console.log({User})
+
+        wallet.balance= 0;
 
         UserList.push(User) // add the User on the UserList
         
         WalletList.push(wallet)
 
-        for (var i=1; i<UserList.length;i++){
+        for (var i=0; i<UserList.length;i++){
             UserList[i].id=i;
             UserList[i].is_admin=false;
             WalletList[i].id=i;
@@ -47,32 +48,50 @@ class Signin extends Component{
 
         console.log(UserList)
         localStorage.setItem('MyUserList',JSON.stringify(UserList));
+        localStorage.setItem('MyWalletList', JSON.stringify(WalletList));
 
         document.forms[0].reset(); // reset the form for next entries  
              
     }
 
+    render() {
+        return (
+            <div className="app">
+                <div className="header">
+                    <h1>Watermelon</h1>
+                </div>
+                <div className="form">
+                    <form>
+                        <p className="title">Sign In</p>
+                        <div className="form_item">
+                            <label></label>
+                            <input id="firstname" type="text" placeholder="enter your first name" required></input>
+                        </div>
 
-    render(){
-        return(
-            <div>
-            <form>
-            <label><b>First name</b></label>
-            <input id="firstname" type="text" placeholder="enter your first name" required></input>
+                        <div className="form_item">
+                            <label></label>
+                            <input id="lastname" type="text" placeholder="enter your last name" required></input>
+                        </div>
 
-            <label><b>Last name</b></label>
-            <input id="lastname" type="text" placeholder="enter your last name" required></input>
+                        <div className="form_item">
+                            <label></label>
+                            <input id="email" type="email" placeholder="enter email" required></input>
+                        </div>
 
-            <label><b>Mail adress</b></label>
-            <input id="email" type="email" placeholder="enter email" required></input>
+                        <div className="form_item">
+                            <label></label>
+                            <input id="password" type="password" placeholder="enter password" required></input>
+                        </div>
 
-            <label><b>Password</b></label>
-            <input id="password" type="password" placeholder="enter password" required></input>
-            
-            <button onClick={this.AffectUser}>oui</button>
-            </form>
-            <button><Link to="/">Return</Link></button>
-            </div>    
+                        <p>
+                            <button onClick={this.AffectUser}>Validate</button>
+                        </p>
+
+                    </form>
+                </div>
+
+                <button><Link to="/">Return</Link></button>
+            </div>
         );
     }
 }

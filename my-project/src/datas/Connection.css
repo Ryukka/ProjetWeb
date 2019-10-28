@@ -1,0 +1,38 @@
+
+
+
+.form {
+    display:table-cell;
+    justify-content: space-around;
+    color: white;
+    font-family: sans-serif;
+    
+    margin-left: auto;
+    margin-right: auto;
+
+    vertical-align: middle;
+    text-align: center;
+    
+}
+
+
+
+.mail {
+    padding:5px;
+}
+
+.pwd {
+    padding:5px;
+}
+
+.log_in {
+    padding:5px;
+}
+
+.sign_in {
+    display: block;
+    padding:5px;
+    margin-left: auto;
+    margin-right: auto;
+    color:white;
+}

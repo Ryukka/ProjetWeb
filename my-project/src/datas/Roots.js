@@ -6,7 +6,7 @@ import Payin from './Payins.js';
 import CreditCard from './Cards/CreditCard.js';
 import Payout from './Payouts.js';
 import Home from './Homes.js';
-import User from './Users.js';
+import User from './users.js';
 import Cards from './Cards/Cards.js';
 import CreditCardForm from './Cards/CreditCardForm.js';
 import Transfer from './Transfers.js'
@@ -24,10 +24,8 @@ class Root extends Component {
                     <Route path="/payin" component={Payin}/>
                     <Route path="/payout" component={Payout}/>
                     <Route path="/mycard" component={Cards}/>
-                    <Route path="/myaccount" component={User}/>
-                    <Route path="/cards" component={Cards}/>
+                    <Route path="   /myaccount" component={User}/>
                     <Route path="/addcard" component={CreditCardForm}/>
-                    <Route path="/rmcard" component={Cards}/>
                     <Route path="/transfer" component={Transfer}/>
                 </div>
             </BrowserRouter>            

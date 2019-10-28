@@ -12,7 +12,7 @@ class Cards extends Component {
           return(
             <div>
                 <button><Link to="/addcard">Add card</Link></button>
-                <button><Link to="/rmcard">Delete card</Link></button>
+                <button>Delete card</button>
                 <button><Link to="/home">Back</Link></button>
             </div>
           )
