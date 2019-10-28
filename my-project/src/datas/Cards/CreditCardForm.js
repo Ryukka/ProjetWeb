@@ -51,7 +51,11 @@ class CreditCardForm extends Component {
         const { brand, name, rib, expiryDate, cvc} = this.state
 
         return (
-            <div>
+            <div className="app">
+                <div className="header">
+                    <h1>Watermelon</h1>
+                </div>
+                <p className="title">New Card</p>
                 <div className='credit-card'>
                     <form onSubmit={this.handleSubmit}>
                         <label className='credit-card_logo'>
@@ -104,7 +108,9 @@ class CreditCardForm extends Component {
                                 </label>
                             </div>
 
-                            <div className='credit-card_info_cvc'>
+                            
+                        </div>
+                        <div className='credit-card_info_cvc'>
                                 <label className='credit-card_info_label'>
                                     CVC
                                     <input 
@@ -117,7 +123,6 @@ class CreditCardForm extends Component {
                                     </input>
                                 </label>
                             </div>
-                        </div>
                                             
                         <label>
                             <input 
@@ -128,7 +133,7 @@ class CreditCardForm extends Component {
                         </label>       
                     </form>
                 </div>
-                <button><Link to="/cards">Back</Link></button>
+                <button className="button2"><Link to="/home" className="link">Back</Link></button>
             </div>
 
 

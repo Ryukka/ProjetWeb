@@ -51,7 +51,7 @@ class Connection extends Component {
                 </div>
 
                 <div className="sign_in">
-                    <button className="button2" ><Link to="/signin">Sign in</Link></button>
+                    <button className="button2" ><Link to="/signin" className="link">Sign in</Link></button>
                 </div>
             </div>
 

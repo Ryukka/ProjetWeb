@@ -16,10 +16,10 @@ class Home extends Component {
                 </div>
                 
                 <p className="title"> Home </p>
-                    <button className="button"><Link to="/myAccount">My Account</Link></button>
-                    <button className="button"><Link to="/myCards">My Cards</Link></button>
-                    <button className="button"><Link to="/myWallet">My Wallet</Link></button>
-                    <button className="button2"><Link to="/">Disconnect</Link></button>
+                    <button className="button"><Link to="/myAccount" className="link">My Account</Link></button>
+                    <button className="button"><Link to="/myCards" className="link">My Cards</Link></button>
+                    <button className="button"><Link to="/myWallet" className="link">My Wallet</Link></button>
+                    <button className="button2"><Link to="/" className="link">Disconnect</Link></button>
             </div>
         );
     }

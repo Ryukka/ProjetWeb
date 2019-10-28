@@ -9,12 +9,14 @@ class Wallet extends Component {
                     <h1>Watermelon</h1>
                 </div>
                 <p className="title">My Wallet</p>
-                <button><Link to="/payin">Make a deposit</Link></button>
-                <button><Link to="/payout">Withdraw money</Link></button>
-                <button><Link to="/transfer">Transfer money</Link></button>
+                <button className="button" ><Link to="/payin" className="link">Make a deposit</Link></button>
+                <button className="button"><Link to="/payout" className="link">Withdraw money</Link></button>
+                <button className="button"><Link to="/transfer" className="link">Transfer money</Link></button>
                 <label>
                     <b>My Wallet:</b>
-                    <button onClick={this.mywallet}></button></label>
+                    <button onClick={this.mywallet}></button>
+                </label>
+                <button className="button2"><Link to="/home" className="link">Back</Link></button>
             </div>
 
         )

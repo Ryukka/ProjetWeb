@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import './credit-card.css';
 
 
@@ -9,8 +9,9 @@ class CreditCard extends Component {
             
         }*/
     }
-      render(props) {
-          return (
+    render(props) {
+        return (
+            
                 <div className='credit-card'>
 
                     <div className='credit-card_logo'>{this.props.logo}</div>
@@ -34,9 +35,9 @@ class CreditCard extends Component {
                         </div>
                     </div>
                 </div>
-            
-          )
-      }
+
+        )
+    }
 }
 
 export default CreditCard;

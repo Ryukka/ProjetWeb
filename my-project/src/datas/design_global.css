@@ -89,7 +89,30 @@
     transition-duration: 0.4s;
 }
 
+.button3 {
+    text-decoration:none;
+    background-color: none;
+}
+
 .button:hover {
+    background-color: white;
+    color: #3D3A3A;
+    text-decoration: none;
+}
+
+.button2:hover {
+    background-color: white;
+    color: #3D3A3A;
+    text-decoration: none;
+}
+
+.link {
+    text-decoration:none;
+    color: white;
+}
+
+.link:hover {
+    text-decoration:none;
     background-color: white;
     color: #3D3A3A;
 }
